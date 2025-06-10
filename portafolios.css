@@ -1,0 +1,85 @@
+/* styles.css */
+
+/* Fuente y colores base */
+:root {
+  --color-principal: #3b82f6;
+  --color-fondo: #f9fafb;
+  --color-texto: #1f2937;
+  --color-header: #ffffff;
+  --color-footer: #e5e7eb;
+  --color-link: #2563eb;
+  --max-width: 1000px;
+  --padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+header {
+  background-color: var(--color-header);
+  border-bottom: 1px solid #d1d5db;
+  padding: var(--padding);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-link);
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 var(--padding);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--color-principal);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+footer {
+  background-color: var(--color-footer);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section {
+    padding: 0 1rem;
+  }
+}
