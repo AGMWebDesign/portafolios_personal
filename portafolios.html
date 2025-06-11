@@ -39,6 +39,18 @@
             <p>Web funcional para negocios de restauración</p>
             <a href="#" class="btn">Ver proyecto</a>
         </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Proyecto 2">
+          <h3>Web Barbería</h3>
+          <p>Web funcional para barberías</p>
+          <a href="#" class="btn">Ver proyecto</a>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Proyecto 3">
+          <h3>Web Varios</h3>
+          <p>Web funcional para diversos negocios</p>
+          <a href="#" class="btn">Ver proyecto</a>
+        </div>
         
     </div>
   </section>
@@ -60,5 +72,62 @@
   <footer>
     <p>© 2025 Alejandro. Todos los derechos reservados.</p>
   </footer>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="cerrar">&times;</span>
+      <h3 id="modal-titulo">Título del Proyecto</h3>
+      <p id="modal-descripcion">Descripción del proyecto.</p>
+      <a id="modal-enlace" href="#" target="_blank" class="btn">Ir al proyecto</a>
+    </div>
+  </div>
+
+  <script>
+    const protectos = [
+      {
+        titulo: "Web cafetería",
+        descripcion: "Web funcional para negocios de restauración.",
+        enlace: "https://tu-enlace-a-la-web-cafeteria.com"
+      },
+      {
+        titulo: "Web barbería",
+        descripcion: "Web funcional para barberías.",
+        enlace: "https://tu-enlace-a-la-web-barbería.com"
+      },
+      {
+        titulo: "Web varios",
+        descripcion: "Web funcional para varios negocios.",
+        enlace: "https://tu-enlace-a-la-web-varios.com"
+      },
+
+    ];
+
+    const botones = document.querySelectorAll('.card .btn');
+  const modal = document.getElementById('modal');
+  const modalTitulo = document.getElementById('modal-titulo');
+  const modalDescripcion = document.getElementById('modal-descripcion');
+  const modalEnlace = document.getElementById('modal-enlace');
+  const cerrarBtn = document.querySelector('.cerrar');
+
+  botones.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const proyecto = proyectos[index];
+      modalTitulo.textContent = proyecto.titulo;
+      modalDescripcion.textContent = proyecto.descripcion;
+      modalEnlace.href = proyecto.enlace;
+      modal.style.display = 'block';
+    });
+  });
+
+  cerrarBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+  </script>
 </body>
 </html>
