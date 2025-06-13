@@ -20,17 +20,17 @@
     </nav>
   </header>
 
-  <section id="inicio">
+  <section id="inicio" class="animado">
     <h2>Bienvenido a mi portafolio</h2>
     <p>Desarrollador web con pasión por crear sitios modernos y funcionales.</p>
   </section>
 
-  <section id="sobre-mi">
+  <section id="sobre-mi" class="animado">
     <h2>Sobre mí</h2>
     <p>Soy Alejandro, desarrollador autodidacta con experiencia en proyectos personales usando HTML, CSS y JavaScript.</p>
   </section>
 
-  <section id="proyectos">
+  <section id="proyectos" class="animado">
     <h2>Proyectos</h2>
     <div class="proyectos-grid">
         <div class="card">
@@ -55,7 +55,7 @@
     </div>
   </section>
 
-  <section id="servicios">
+  <section id="servicios" class="animado">
     <h2>Servicios</h2>
     <ul>
       <li>Creación de páginas web responsivas</li>
@@ -64,9 +64,20 @@
     </ul>
   </section>
 
-  <section id="contacto">
+  <section id="contacto" class="animado">
     <h2>Contacto</h2>
-    <p>Puedes escribirme a: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+    <form action="https://formspree.io/f/xpwrdnna" method="POST">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="emal">Correo electrónico</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
   </section>
 
   <footer>
@@ -82,7 +93,7 @@
   </div>
 
   <script>
-    const protectos = [
+    const proyectos = [
       {
         titulo: "Web cafetería",
         descripcion: "Web funcional para negocios de restauración.",
@@ -101,7 +112,7 @@
 
     ];
 
-    const botones = document.querySelectorAll('.card .btn');
+  const botones = document.querySelectorAll('.card .btn');
   const modal = document.getElementById('modal');
   const modalTitulo = document.getElementById('modal-titulo');
   const modalDescripcion = document.getElementById('modal-descripcion');
@@ -127,6 +138,21 @@
     if (e.target === modal) {
       modal.style.display = 'none';
     }
+  });
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('mostrar');
+        observador.unobserve(entrada.target); // Para que no se vuelva a animar
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.animado').forEach(elem => {
+    observador.observe(elem);
   });
   </script>
 </body>
