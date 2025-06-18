@@ -19,6 +19,8 @@ body {
   color: var(--color-texto);
 }
 
+
+/* Header y menú*/
 header {
   background-color: var(--color-header);
   border-bottom: 1px solid #d1d5db;
@@ -52,6 +54,8 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Títulos y Secciones */
+
 section {
   max-width: var(--max-width);
   margin: 2rem auto;
@@ -65,25 +69,8 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-footer {
-  background-color: var(--color-footer);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
 
-/* Responsive */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  section {
-    padding: 0 1rem;
-  }
-}
-
+/* Sección proyectos */
 .proyectos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -109,6 +96,8 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+  aspect-ratio: 1/1;
+  object-fit: cover; 
 }
 
 .card h3 {
@@ -186,6 +175,8 @@ footer {
   transform: translateY(0);
 }
 
+
+/* Contacto */
 form {
   display: flex;
   flex-direction: column;
@@ -213,8 +204,37 @@ form textarea:focus {
 }
 
 form button.btn {
-  width: fit-content;
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--color-principal);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
   border: none;
-  cursor: pointer;
+}
+
+form button.btn:hover {
+  background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-footer);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section {
+    padding: 0 1rem;
+  }
 }
