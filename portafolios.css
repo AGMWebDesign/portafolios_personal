@@ -22,6 +22,9 @@ body {
 
 /* Header y menú*/
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--color-header);
   border-bottom: 1px solid #d1d5db;
   padding: var(--padding);
@@ -30,10 +33,24 @@ header {
   z-index: 1000;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  border-radius: 50px;
+}
+
 header h1 {
   margin: 0;
   font-size: 1.8rem;
 }
+
+/* Menú */
 
 nav ul {
   display: flex;
@@ -229,9 +246,30 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-container {
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
   nav ul {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+    padding-left: 0;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    height: 50px;
   }
 
   section {
