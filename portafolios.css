@@ -102,6 +102,9 @@ section h2 {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -113,19 +116,21 @@ section h2 {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 1/1;
-  object-fit: cover; 
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 .card h3 {
-  margin: 0.5rem 1rem 0;
+  margin: 0.75rem 1rem 0;
   font-size: 1.2rem;
   color: var(--color-texto);
 }
 
 .card p {
   margin: 0.5rem 1rem 1rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  color: #555;
+  flex-grow: 1;
 }
 
 .card .btn {
@@ -137,11 +142,13 @@ section h2 {
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.2s ease;
+  text-align: center;
 }
 
 .card .btn:hover {
   background-color: #2563eb;
 }
+
 
 /* Modal */
 .modal {
@@ -276,3 +283,26 @@ footer {
     padding: 0 1rem;
   }
 }
+
+/* Responsive específico para proyectos */
+@media (max-width: 600px) {
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .card .btn {
+    width: calc(100% - 2rem);
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+}
+
