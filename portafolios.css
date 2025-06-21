@@ -1,9 +1,6 @@
 /* styles.css */
 
 /* Fuente y colores base */
-html {
- scroll-behavior: smooth;
-}
 
 :root {
   --color-principal: #7a1e2d;
@@ -83,7 +80,6 @@ section {
 }
 
 section h2 {
-  scroll-margin-top: 80px;
   font-size: 1.5rem;
   border-bottom: 2px solid var(--color-principal);
   display: inline-block;
