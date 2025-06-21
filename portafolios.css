@@ -1,6 +1,9 @@
 /* styles.css */
 
 /* Fuente y colores base */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --color-principal: #7a1e2d;
