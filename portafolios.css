@@ -2,12 +2,11 @@
 
 /* Fuente y colores base */
 :root {
-  --color-principal: #3b82f6;
-  --color-fondo: #f9fafb;
+  --color-principal: #7a1e2d;
+  --color-fondo: #fefcf9;
   --color-texto: #1f2937;
   --color-header: #ffffff;
-  --color-footer: #e5e7eb;
-  --color-link: #2563eb;
+  --color-link: #5c1623;
   --max-width: 1000px;
   --padding: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -63,7 +62,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: var(--color-link);
+  color: var(--color-principal);
   font-weight: 500;
 }
 
@@ -146,7 +145,7 @@ section h2 {
 }
 
 .card .btn:hover {
-  background-color: #2563eb;
+  background-color: var(--color-link);
 }
 
 
@@ -240,15 +239,16 @@ form button.btn {
 }
 
 form button.btn:hover {
-  background-color: #2563eb;
+  background-color: var(--color-link);
 }
 
 /* Footer */
 footer {
-  background-color: var(--color-footer);
+  background-color: var(--color-principal);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  color: var(--color-fondo);
 }
 
 /* Responsive */
