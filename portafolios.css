@@ -77,13 +77,13 @@ nav a:hover {
 /* Títulos y Secciones */
 
 section {
-  scroll-margin-top: 80px;
   max-width: var(--max-width);
   margin: 2rem auto;
   padding: 0 var(--padding);
 }
 
 section h2 {
+  scroll-margin-top: 80px;
   font-size: 1.5rem;
   border-bottom: 2px solid var(--color-principal);
   display: inline-block;
