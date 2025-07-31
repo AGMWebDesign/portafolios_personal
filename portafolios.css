@@ -20,6 +20,7 @@ body {
   margin: 0;
   background-color: var(--color-fondo);
   color: var(--color-texto);
+  text-align: justify;
 }
 
 
@@ -116,18 +117,19 @@ section h2 {
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-.card img {
+.card iframe {
   width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 16/9;
-  object-fit: cover;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s;
 }
 
 .card h3 {
   margin: 0.75rem 1rem 0;
   font-size: 1.2rem;
   color: var(--color-texto);
+  text-align: center;
 }
 
 .card p {
@@ -135,6 +137,7 @@ section h2 {
   font-size: 1rem;
   color: #555;
   flex-grow: 1;
+  text-align: center;
 }
 
 .card .btn {
